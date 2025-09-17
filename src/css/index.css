@@ -78,7 +78,9 @@ header .btnclose{
   width: 100%;
 
 }
-
+.headerContainter2, .actPage{
+    display: none;
+}
 .CompareText-container{
     padding: 24px 20px 0 24px;
 }
