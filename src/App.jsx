@@ -2,7 +2,7 @@ import NavBar from "./components/NavBar"
 import { Routes, Route, Link } from "react-router-dom";
 import SpellCheck from "./pages/SpellCheck";
 import CompareText from "./pages/CompareText";
-import VoiceToText from "./pages/VoictoText";
+import VoiceToText from "./pages/VoiceToText";
 import TextToVoice from "./pages/TextToVoice";
 import ToPDF from "./pages/ToPDF";
 
