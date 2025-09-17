@@ -1,0 +1,290 @@
+:root {
+  /* Colors */
+  --primary-color: #fff;
+  --secondary-color: #132450;
+  --accent-color: #ff6347;
+  --btn-color: #383A4899;
+  --border-color: #EDEDED;
+
+  /* Font sizes */
+  --font-small: 14px;
+  --font-large: 18px;
+
+}
+
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: var(--font-small);
+}
+.App{
+    display: flex;
+    
+}
+
+.headerContainter {
+    color: var(--primary-color);
+    background-color:var(--secondary-color);
+    width: 240px;
+    height: 100vh;
+    padding: 45px 0 20px 24px;
+    min-width: 240px;    /* prevents shrink on narrow content */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+header .btnclose{
+    position: absolute;
+    top: 12px;
+    left: 193px;
+    cursor: pointer;
+}
+.logo{
+    margin-bottom: 23px;
+}
+.nav-NavLink{
+    color: #FFFFFF;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-top: 28px;
+    padding: 12px 16px;     
+    transition: background 0.2s ease, color 0.2s ease;
+    width: 100%;
+}
+
+.nav-NavLink span {
+  display: flex;         
+  align-items: center;
+  gap: 2px;
+  font-size: var(--font-small);
+}
+.user{
+    padding-right: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.user div{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.nav-NavLink.active{
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 20px 0 0 20px; 
+  width: 100%;
+
+}
+
+.CompareText-container{
+    padding: 24px 20px 0 24px;
+}
+.CompareText1{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 16px;
+}
+.btnLang{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.btnLang button{
+    padding: 9px 3px 9px 14px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btnLang button img{
+    margin-left: 34px;
+}
+.btnLang label{
+    display: flex;
+    align-items: center;
+}
+.btnLang label input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  color: #E0E0E0;
+  cursor: pointer;
+}
+.btnNew{
+    background-color: var(--btn-color);
+    border-radius: 6px;
+    color:var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 7px 12px;
+    cursor: pointer;
+}
+.CompareText2 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 24px
+}
+.compareText{
+    width: 582px;
+    height: 432px;
+    border-radius: 8px;
+    padding: 12px;
+    resize: none;
+    background-color: #F0F7FF;
+    font-size: var(--font-large);
+}
+.btnCompare{
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+}
+.btnCompare button{
+    padding: 10px 37px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.btnCompare button h5{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.activebtn {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+.disabledbtn {
+  background-color: var(--btn-color);
+  color: var(--primary-color);
+  cursor: not-allowed;
+}
+.loader-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 192px auto;
+}
+
+.loader{
+    width: 280px;
+    padding: 20px 16px;
+    border: 1px solid #E1E1E1;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+}
+.loader h4{
+    font-size: 10px;
+}
+
+.progress-bar {
+  background-color: var(--btn-color);
+  height: 8px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background-color: var(--secondary-color); 
+  height: 100%;
+  width: 0%;
+  transition: width 0.03s linear;
+  opacity: 0.9;
+}
+
+@media (max-width: 1024px) {
+    .CompareText1{
+        min-width: 720px;
+    }
+    .compareText{
+        width: 340px;
+    }
+    .CompareText2{
+        gap: 5px;
+    }
+
+  .container {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 720px) {
+    .App{
+        flex-direction: column;
+    }
+    .headerContainter{
+        display: none;
+    }
+    .headerContainter2{
+        background-color: var(--secondary-color);
+        padding: 12px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .burger-bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 18px;
+        height: 14px; /* spacing between lines */
+        cursor: pointer;
+        }
+
+    .burger-bar span {
+        display: block;
+        height: 2px;
+        width: 18px;
+        background-color: white;
+        border-radius: 1px;
+    }
+    .logo{
+        margin-bottom: 0;
+    }
+    .actPage{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 12px 30px;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .CompareText1{
+        min-width: auto;
+    }
+}
+@media (max-width: 480px) {
+    .CompareText1{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .btnLang{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    .btnLang button{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .CompareText2{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .compareText{
+        width: 288px;
+        height: 190px;
+    }
+    .CompareText2 img{
+        transform: rotate(90deg);
+    }
+}
