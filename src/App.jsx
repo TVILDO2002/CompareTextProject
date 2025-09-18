@@ -10,7 +10,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="flex flex-col lg:flex-row  h-screen ">
       <NavBar />
 
       <Routes>

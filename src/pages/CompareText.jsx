@@ -86,19 +86,20 @@ export default function CompareText(){
 
 
     return(
-        <div className="CompareText-container">
-            <div className="CompareText1">
-                <div className="btnLang">
-                    <button >
+        <div className="px-4 md:px-7 py-6 w-full">
+            <div className="flex flex-col md:flex-row md:justify-between gap-4 border-b border-black pb-4">
+                <div className="flex flex-col md:flex-row gap-4">
+                    <button className="flex justify-between border border-black rounded-md px-2 md:px-4  py-3 " >
                         ქართული
-                        <img src={group} alt="group"/> 
+                        <img className="md:ml-3" src={group} alt="group"/> 
                     </button>
-                    <label>
+                    <label className="flex gap-2 items-center">
                         <input type="checkbox" name="subscribe" />
                         ფორმატის შენარჩუნება
                     </label>
                 </div>
-                <button onClick={handleReset}  disabled={!isActive} className={`btnNew ${isCompared ? "activebtn" : "disabledbtn"}`} >
+                <button onClick={handleReset}  disabled={!isActive} 
+                        className={`flex justify-center items-center text-white rounded-md py-2 px-4 ${isCompared ? "bg-[#132450;]" : "bg-[#383A4899] "}`} >
                     <img src={plus} alt="plus" />
                     ახლის გახსნა
                 </button>
@@ -121,20 +122,20 @@ export default function CompareText(){
                 </div>
             </div>
             :   
-            <div className="CompareText2">
-                {isCompared ? <div className="compareText">{text1Display}</div> : 
-                <textarea className="compareText" value={text1} onChange={handleChange1} placeholder="დაიწყე წერა..." />}
-                <img src={arrow} alt="Arrow" />
-                {isCompared ? <div className="compareText">{text2Display}</div> : 
-                <textarea className="compareText" value={text2} onChange={handleChange2} placeholder="დაიწყე წერა..." />}
+            <div className="py-6 flex flex-col md:flex-row items-center gap-5">
+                {isCompared ? <div className="resize-none focus:outline-none w-full h-44 md:h-[400px] p-4 bg-[#F0F7FF] rounded-md">{text1Display}</div> : 
+                <textarea className="resize-none focus:outline-none w-full h-44 md:h-[400px] p-4 bg-[#F0F7FF] rounded-md " value={text1} onChange={handleChange1} placeholder="დაიწყე წერა..." />}
+                <img class="rotate-90 md:rotate-0" src={arrow} alt="Arrow" />
+                {isCompared ? <div className="resize-none focus:outline-none w-full h-44 md:h-[400px] p-4 bg-[#F0F7FF] rounded-md">{text2Display}</div> : 
+                <textarea className="resize-none focus:outline-none w-full h-44 md:h-[400px] p-4 bg-[#F0F7FF] rounded-md" value={text2} onChange={handleChange2} placeholder="დაიწყე წერა..." />}
             </div>}
            
-            <div className="btnCompare">
+            <div className="flex justify-center text-white  rounded-md py-2">
                 <button 
                 onClick={handleClick}  
                 disabled={!isActive}  
-                className={isActive ? "activebtn" : "disabledbtn"} >
-                   {isCompared ? <h5> <img src={again} alt="arrow rotate"/> შედარება</h5> : <h5> შედარება</h5> }
+                className={` w-[50%] py-2 px-9 rounded-md ${isActive ? "bg-[#132450;]" : "bg-[#383A4899] "}`} >
+                   {isCompared ? <h5 className="flex justify-center items-center gap-2"> <img src={again} alt="arrow rotate"/> შედარება</h5> : <h5> შედარება</h5> }
                 </button>
             </div>
         </div>

@@ -18,23 +18,29 @@ function NavBar() {
 
 
   return (
-    <header>
-        <div className="headerContainter">
-            <button className="btnclose" ><img src={close} alt="chevrnos-left" /></button>
-            <nav>
-                <img className="logo" src={logo} alt="Logo" />
-                <ul>
+    <header className="">
+        <div className="hidden lg:flex bg-[#132450] w-60 h-full flex-col justify-between items-between  pt-11 pb-5 pl-6 ">
+            <button class="absolute top-[12px] left-[193px] cursor-pointer"><img src={close} alt="chevrnos-left" /></button>
+            <nav className="text-white " >
+                <img className="mb-12" src={logo} alt="Logo" />
+                <ul className="flex flex-col gap-8" >
                     <li>
-                        <NavLink className="nav-NavLink" to="/spellCheck">
+                        <NavLink className={({ isActive }) =>
+                            `flex items-center gap-2 px-3 py-2 rounded-tl-xl rounded-bl-xl transition-colors ${
+                            isActive ? "bg-white text-[#132450]" : "text-white"
+                            }`
+                        } to="/spellCheck">
                             <img src={check} alt="Check" />
                         <span>მართლმწერი </span> 
                         </NavLink>
                     </li>
-                        <li>
+                    <li>
                         <NavLink
                             to="/compare-Text"
-                            className={({ isActive }) =>
-                            `nav-NavLink ${isActive ? "active" : ""}`
+                           className={({ isActive }) =>
+                                `flex items-center gap-2 px-3 py-2 rounded-tl-xl rounded-bl-xl transition-colors ${
+                                isActive ? "bg-white text-[#132450]" : "text-white"
+                                }`
                             }
                         >
                             <img src={spellCheck} alt="Spelling, Check, Text" />
@@ -42,18 +48,26 @@ function NavBar() {
                         </NavLink>
                         </li>
                     <li>
-                        <NavLink className="nav-NavLink" to="/voice-to-text">
+                        <NavLink className={({ isActive }) =>
+                                    `flex items-center gap-2 px-3 py-2 rounded-tl-xl rounded-bl-xl transition-colors ${
+                                    isActive ? "bg-white text-[#132450]" : "text-white"
+                                    }`
+                                } to="/voice-to-text">
                             <img src={mic}  alt="mic" />
-                            <span> ხმა 
+                            <span className="flex items-center gap-2 " > ხმა 
                                 <img src={arrowRight} alt="arrow right" />
                                 ტექსტი
                             </span> 
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink className="nav-NavLink" to="/text-to-voice">
+                        <NavLink className={({ isActive }) =>
+                                    `flex items-center gap-2 px-3 py-2 rounded-tl-xl rounded-bl-xl transition-colors ${
+                                    isActive ? "bg-white text-[#132450]" : "text-white"
+                                    }`
+                                } to="/text-to-voice">
                             <img src={alignCenter} alt="Align Center" />
-                            <span>
+                            <span className="flex items-center gap-2 " >
                                 ტექსტი
                                 <img src={arrowRight} alt="arrow right" />
                                 ხმა
@@ -61,7 +75,11 @@ function NavBar() {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink className="nav-NavLink" to="/to-PDF">
+                        <NavLink className={({ isActive }) =>
+                                `flex items-center gap-2 px-3 py-2 rounded-tl-xl rounded-bl-xl transition-colors ${
+                                isActive ? "bg-white text-[#132450]" : "text-white"
+                                }`
+                            } to="/to-PDF">
                             <img src={pdfconv} alt="programming code document" />
                             <span>PDF კონვერტაცია</span> 
                         </NavLink>
@@ -70,16 +88,16 @@ function NavBar() {
 
             
             </nav>
-            <div className="user">
-                <div>
-                <img src={userImg} alt="user Img" />
-                <span>თამარ ონიანი</span>
+            <div className="flex justify-between pr-6 text-white ">
+                <div className="flex gap-3">
+                    <img src={userImg} alt="user Img" />
+                    <span>თამარ ონიანი</span>
                 </div>
                 <div>...</div>
             </div>
 
         </div>
-        <div className="headerContainter2">
+        <div className="lg:hidden bg-[#132450] w-full flex justify-between items-center py-3 px-5">
              <img className="logo" src={logo} alt="Logo" />
             <div className="burger-bar">
                 <span></span>
@@ -87,9 +105,9 @@ function NavBar() {
                 <span></span>
             </div>
         </div>
-        <div className="actPage">
+        <div className="lg:hidden flex px-5 py-4 border-b-2 border-b-red">
             <img src={spellCheck} alt="Spelling, Check, Text" />
-            <span>ტექსტის შედარება</span>
+            <span className="text-[#132450]">ტექსტის შედარება</span>
             <img src={arrowDown} alt="arrow down" />
         </div>
         
