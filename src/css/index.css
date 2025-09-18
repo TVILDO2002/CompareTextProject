@@ -25,19 +25,32 @@ body {
   font-size: var(--font-small);
 }
 
- .burger-bar {
+.burger-bar {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         width: 18px;
         height: 14px; /* spacing between lines */
         cursor: pointer;
-        }
+}
 
-    .burger-bar span {
+.burger-bar span {
         display: block;
         height: 2px;
         width: 18px;
         background-color: white;
         border-radius: 1px;
-    }
+}
+.progress-bar {
+  background-color: var(--btn-color);
+  height: 8px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.progress-fill {
+  background-color: var(--secondary-color); 
+  height: 100%;
+  width: 0%;
+  transition: width 0.03s linear;
+  opacity: 0.9;
+}

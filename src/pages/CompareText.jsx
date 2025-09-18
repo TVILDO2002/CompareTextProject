@@ -105,12 +105,12 @@ export default function CompareText(){
                 </button>
             </div>
             {loading? 
-            <div className="loader-container">
-                <div className="loader">
+            <div className="flex justify-center items-center my-40 md:my-44 lg:my-48">
+                <div className="flex gap-3 border border-[#E1E1E1] px-4 py-5 rounded-xl">
                     <img src={load} alt="Loading"/>
                     <div>
                         <h4>Converting... Thank you For Your Patience</h4>
-                        <div className="progress-bar-containter" >
+                        <div >
                             <p>{progress}%</p>
                             <div className="progress-bar">
                                 <div className="progress-fill"
